@@ -1,0 +1,134 @@
+@import '../../styles/_variables.scss';
+
+.match {
+  width: 100%;
+  background-color: $matchBackgroundColor;
+  padding: 20px;
+  color: $textColor;
+  text-align: center;
+
+  .match_country,
+  .match_status {
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 12px;
+    letter-spacing: 1.1px;
+  }
+
+  .match_status {
+    &.ended {
+      color: $green;
+    }
+
+    &.live {
+      color: $yellow;
+    }
+
+    &.cancelled {
+      color: $yellow;
+    }
+  }
+
+  .match_country {
+    opacity: .9;
+  }
+
+  .match_competition {
+    font-size: 18px;
+  }
+
+  .match_score {
+    font-size: 60px;
+  }
+
+  .match_teams {
+    font-size: 18px;
+
+    div {
+      width: 33.33%;
+    }
+
+    .home_team,
+    .away_team {
+      flex-direction: column;
+      align-self: center;
+      line-height: 18px;
+    }
+
+    .match_time {
+      .progress_circle {
+        position: relative;
+        padding: 0;
+        width: 60px;
+        height: 60px;
+        background-color: $gray;
+        border-radius: 50%;
+        line-height: 60px;
+        margin: 0 auto;
+
+        &:after {
+          border: 0;
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          text-align: center;
+          display: block;
+          border-radius: 50%;
+          width: 56px;
+          height: 56px;
+          background-color: $matchBackgroundColor;
+          content: " ";
+        }
+
+        &.over50 {
+          position: absolute;
+          clip: rect(0, 60px, 60px, 40px);
+          background-color: $green;
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+        }
+
+        &:not(.over50) {
+          .first50_bar {
+            display: none;
+          }
+        }
+
+        &.p10 {
+          .value_bar {
+            transform: rotate(36deg);
+          }
+        }
+
+        span {
+          position: absolute;
+          line-height: 60px;
+          width: 60px;
+          text-align: center;
+          display: block;
+          color: $green;
+          z-index: 2;
+        }
+
+        .left_half_clipper {
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+          position: absolute;
+          clip: rect(0, 60px, 60px, 40px);
+
+          .value_bar {
+            position: absolute;
+            clip: rect(0, 40px, 60px,0);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 6px solid $green;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+  }
+}
