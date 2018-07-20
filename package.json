@@ -15,6 +15,8 @@
     "chalk": "1.1.3",
     "css-loader": "0.28.4",
     "dotenv": "^4.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "3.19.0",
     "eslint-config-react-app": "^1.0.5",
     "eslint-loader": "1.7.1",
@@ -34,11 +36,11 @@
     "postcss-flexbugs-fixes": "3.0.0",
     "postcss-loader": "2.0.6",
     "promise": "7.1.1",
-    "react": "^15.6.2",
+    "react": "^16.0.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-addons-transition-group": "^15.6.2",
     "react-dev-utils": "^3.0.2",
-    "react-dom": "^15.6.2",
+    "react-dom": "^16.0.0",
     "react-error-overlay": "^1.0.9",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
@@ -74,6 +76,7 @@
     "eslint-plugin-react": "^7.0.1"
   },
   "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/unitTestSetupFile.js",
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],

@@ -4,7 +4,7 @@
   width: 100%;
   background-color: $matchBackgroundColor;
   padding: 20px;
-  color: $textColor;
+  color: $white;
   text-align: center;
 
   .match_country,
@@ -25,7 +25,7 @@
     }
 
     &.cancelled {
-      color: $yellow;
+      color: $red;
     }
   }
 
@@ -74,19 +74,25 @@
           text-align: center;
           display: block;
           border-radius: 50%;
-          width: 56px;
-          height: 56px;
+          width: 55.5px;
+          height: 55.5px;
           background-color: $matchBackgroundColor;
           content: " ";
         }
 
         &.over50 {
-          position: absolute;
-          clip: rect(0, 60px, 60px, 40px);
-          background-color: $green;
-          border-radius: 50%;
-          width: 60px;
-          height: 60px;
+          .first50_bar {
+            position: absolute;
+            clip: rect(0, 60px, 60px, 30px);
+            background-color: $green;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+          }
+
+          .left_half_clipper {
+            clip: rect(auto, auto, auto, auto);
+          }
         }
 
         &:not(.over50) {
@@ -95,9 +101,9 @@
           }
         }
 
-        &.p10 {
-          .value_bar {
-            transform: rotate(36deg);
+        &.FT {
+          span {
+            color: $green;
           }
         }
 
@@ -107,7 +113,6 @@
           width: 60px;
           text-align: center;
           display: block;
-          color: $green;
           z-index: 2;
         }
 
@@ -116,11 +121,11 @@
           width: 60px;
           height: 60px;
           position: absolute;
-          clip: rect(0, 60px, 60px, 40px);
+          clip: rect(0, 60px, 60px, 30px);
 
           .value_bar {
             position: absolute;
-            clip: rect(0, 40px, 60px,0);
+            clip: rect(0, 30px, 60px, 0);
             width: 60px;
             height: 60px;
             border-radius: 50%;

@@ -4,6 +4,32 @@ body {
   margin: 0;
   padding: 0;
   font-family: $primaryFont;
-  background: #f6f7f8;
-  color: #393c45;
+  background: $lightGrey;
+
+  .nav {
+    @media (max-width: 768px) {
+      flex-direction: column;
+      max-width: 250px;
+    }
+  }
+
+  .nav-pills {
+    .nav-link {
+      color: $matchBackgroundColor;
+
+      &.active {
+        background-color: $matchBackgroundColor;
+
+        .badge {
+          background-color: $lightGrey;
+          color: $matchBackgroundColor;
+        }
+      }
+
+      .badge {
+        background-color: $matchBackgroundColor;
+        color: $lightGrey;
+      }
+    }
+  }
 }
